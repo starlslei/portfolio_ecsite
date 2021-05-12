@@ -1,0 +1,2708 @@
+@charset "UTF-8";
+
+*,*:before,*:after {
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Original Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans CJK JP", "Original Yu Gothic", "Yu Gothic", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+    margin: 0;
+}
+
+/* mainより小さく縮む事がないようにする */
+header,footer {
+  min-width: 960px;
+}
+
+button, input, select, textarea {
+    font-family : inherit;
+    font-size   : 100%;
+}
+
+.row {
+    width: 960px;
+    margin: 0 auto;
+}
+
+/*header*/
+header {
+    width: 100%;
+    background-color: #589ebf;
+    height: 140px;
+}
+
+header .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .row h1 {
+    height: 140px;
+    line-height: 140px;
+    width: 260px;
+    margin-left: 60px;
+}
+
+header .row #nav_button {
+    display: none;
+}
+
+header .row .logout_user_name {
+    margin-right: 50px;
+    height: 140px;
+}
+
+header .row .logout_user_name .logout {
+    height: 40px;
+}
+
+header .row .logout_user_name .logout a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff203;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+header .row .logout_user_name .login {
+    height: 140px;
+    padding: 30px 0;
+}
+
+header .row .logout_user_name .login a {
+    display: block;
+    background-color: #fff203;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-decoration: none;
+}
+
+/*global nav*/
+#global {
+    width: 100%;
+}
+
+#global .logout_responsive {
+  display: none;
+}
+
+#global ul {
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#global ul li {
+    width: 20%;
+}
+/* アニメーション */
+#global ul li a {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.5s;
+
+    position: relative;
+    overflow: hidden;
+}
+
+#global ul li a:hover,
+#active {
+    opacity: 0.6;
+    border-radius: 50px;
+    border: 5px solid #000000;
+}
+
+#global ul li:nth-child(1) a {
+    background-color: #fa0303;
+    color: #ffffff;
+}
+
+#global ul li:nth-child(2) a {
+    background-color: #f5f2b2;
+    color: #000000;
+}
+
+#global ul li:nth-child(3) a {
+    background-color: #03ff07;
+    color: #000000;
+}
+
+#global ul li:nth-child(4) a {
+    background-color: #ff8803;
+    color: #000000;
+}
+
+#global ul li:nth-child(5) a {
+    background-color: #fff203;
+    color: #000000;
+}
+
+#global ul li:nth-child(6) a {
+    background-color: #0314ff;
+    color: #ffffff;
+}
+
+/* ここからもアニメーション */
+#global ul li a span {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+#global ul li a span.ja {
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+#global ul li a:hover span.en {
+    transform: translate(0%, -50px);
+}
+
+#global ul li a:hover span.ja {
+    top: -7%;
+}
+/*footer*/
+footer {
+    width: 100%;
+    background-color: #589ebf;
+    height: 140px;
+    padding: 50px 0;
+}
+
+footer .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .row ul {
+    display: flex;
+    width: 50%;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+
+footer .row ul li {
+    width: 50%;
+    line-height: 40px;
+    list-style-type: none;
+    border-right: 2px solid #000000;
+}
+
+footer .row ul li:last-child {
+    border: none;
+}
+
+footer .row ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    text-align: center;
+}
+
+footer .row ul li a:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+footer .row p {
+    margin: 0;
+    height: 40px;
+    line-height: 40px;
+}
+
+/*slider*/
+
+#slider img {
+    width: 100%;
+    height: 400px;
+}
+#slider .bx-wrapper {
+    box-shadow: none;
+    border: 0;
+}
+
+/*topimg*/
+.top-img {
+    position: relative;
+}
+
+.top-img p {
+    position: absolute;
+    width: 300px;
+    top: 225px;
+    left: 330px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #0000ff;
+}
+
+/*透明のボックスをかぶせる*/
+.top-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #999999;
+    opacity: 0.2;
+    display:block;
+    border-radius: 30px;
+}
+
+/*カルーセルパネル*/
+/* 最背面*/
+#carouselWrap {
+  margin: 100px auto;
+  width: 945px;
+  height: 300px;
+  /* paddingを５pxとする事で周囲に5px見える状態になる */
+  padding: 40px 65px;
+  /* background-color: red; */
+  /* background: url("QiYiValk3.jpg"); */
+  /* 戻るボタンと進むボタンをアブソリュートで配置したいのでrelativeを設定 */
+  position: relative;
+  background-image: url(../images/carousel/carousel.png);
+  background-repeat: no-repeat;
+}
+/* これが戻るボタン */
+#carouselPrev {
+  position: absolute;
+  top: 115px;
+  left: 20px;
+  /* マウスの形状をリンクカーソルへ */
+  cursor: pointer;
+}
+
+#carouselPrev img {
+  width: 50px;
+  height: 50px;
+}
+
+/* これが進むボタン */
+#carouselNext {
+  position: absolute;
+  top: 115px;
+  right: 20px;
+  /* マウスの形状をリンクカーソルへ */
+  cursor: pointer;
+}
+
+#carouselNext img {
+  width: 50px;
+  height: 50px;
+}
+
+/* 最前面のオブジェクト */
+#carousel {
+  /* carouselから画像がはみ出さないようにマスクしている */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#carouselInner {
+  height: 100%;
+}
+
+#carouselInner ul.column {
+  width: 800px;
+  height: 220px;
+  padding: 15px 0 15px 15px;
+  list-style-type: none;
+  float: left;
+}
+
+#carouselInner ul.column li {
+  float: left;
+  /* インラインにしたのはIE6で表示がずれるバグがあるのでその対策 */
+  display: inline;
+  /* marginとあわせて25％（４分の一なので画像が４つ入る） */
+  width: 19%;
+  margin: 0 3%;
+  height: 170px;
+}
+
+#carouselInner ul.column li a {
+  display: block;
+  text-decoration: none;
+  height: 170px;
+}
+
+#carouselInner ul.column li img {
+  border: none;
+  width: 100%;
+  height: 150px;
+}
+
+#carouselInner ul.column li p {
+  height: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+/*home*/
+#home #main-outer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+#home #main-outer main {
+    width: 580px;
+}
+
+#home #main-outer aside {
+    width: 300px;
+}
+
+#home main .blog-outer {
+    width: 100%;
+    background-color: #589ebf;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    height: 830px;
+    border-radius: 40px;
+}
+
+#home main .blog-outer article {
+    overflow: scroll;
+    height: 720px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+#home main .cube-flex {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+}
+
+#home main h2,
+#home aside h2 {
+    background-color: #fff203;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+#home main .blog-outer article .blog-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+}
+
+#home main .blog-outer article .blog-section:first-child {
+    margin-top: 0;
+}
+
+#home main .blog-outer article .blog-section img {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+#home main .blog-outer article .blog-section .blog-text {
+    width: 320px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+#home main .blog-outer article .blog-section .blog-text p {
+    margin: 0;
+    text-indent: 1em;
+}
+
+#home main .blog-outer article .blog-section .blog-text p:first-child {
+    text-indent: 0em;
+}
+
+#home main .blog-outer article .blog-section .blog-text p a {
+    font-size: 18px;
+    line-height: 25px;
+}
+
+#home main .news-outer {
+    width: 100%;
+    background-color: #589ebf;
+    padding: 10px 20px 20px 20px;
+    height: 340px;
+    border-radius: 40px;
+}
+
+#home main .news-outer .news-text {
+    width: 540px;
+    height: 240px;
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    padding: 0 20px;
+}
+
+#home main .news-outer .news-text h3 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#home main .news-outer .news-text h3 strong {
+    color: #ff0000;
+    font-size: 30px;
+}
+
+#home main .news-outer .news-text p {
+    font-size: 18px;
+    line-height: 26px;
+    text-indent: 1em;
+}
+
+#home aside .shop-introduction {
+    padding: 20px 20px 20px 20px;
+    background-color: #589ebf;
+    height: 580px;
+    margin-bottom: 30px;
+    border-radius: 40px;
+}
+
+#home aside .shop-introduction img {
+    width: 260px;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#home aside .shop-text {
+    background-color: #ffffff;
+    width: 100%;
+    height: 280px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+#home aside .shop-text p:first-child {
+  margin-top: 0;
+}
+
+#home aside .shop-introduction h2,
+#home aside .maker-outer h2,
+#home aside .choose-outer h2 {
+    margin: 0 auto 20px auto;
+    width: 100%;
+}
+
+#home aside .maker-outer {
+    background-color: #589ebf;
+    height: 220px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+#home aside .maker-outer .maker-text {
+    background-color: #ffffff;
+    width: 100%;
+    height: 120px;
+    border: 1px solid #000000;
+}
+
+#home aside .maker-outer .maker-text ul {
+  margin-top: 5px;
+}
+
+#home aside .maker-outer .maker-text ul li {
+    height: 22px;
+}
+
+#home aside .choose-outer {
+    background-color: #589ebf;
+    height: 340px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+#home aside .choose-outer .choose-text {
+    background-color: #ffffff;
+    height: 240px;
+    border: 1px solid #000000;
+}
+
+#home aside .choose-outer .choose-text p {
+    margin: 0;
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* gradation-js */
+.blog-cubeimg,
+.news-cubeimg {
+  width: 50px;
+  height: 50px;
+  display: none;
+  border-radius: 5px;
+}
+
+@keyframes bounce {
+  0% {
+    top: 10px;
+    left: 210px;
+  }
+
+  50% {
+    top: 10px;
+    left: 500px;
+    transform: rotateZ(1090deg);
+  }
+
+  100% {
+    top: 10px;
+    left: 210px;
+  }
+}
+
+.cube {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 210px;
+  animation: bounce 4s 1;
+}
+
+
+
+/*product*/
+#product main {
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#product main {
+
+}
+
+#product main #product-nav-button {
+    display: none;
+}
+
+#product main .product-nav .product-nav-box {
+    width: 100%;
+    padding: 20px;
+    padding-top: 5px;
+    background-color: #589ebf;
+    border-radius: 40px;
+    margin-bottom: 33px;
+    height: 240px;
+}
+
+#product main .product-nav .product-nav-box:nth-child(3) {
+    height: 380px;
+}
+
+#product main .product-nav .product-nav-box h2 {
+    background-color: #fff203;
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+#product main .product-nav .product-nav-box ul {
+    background-color: #ffffff;
+    list-style-type: none;
+    padding: 15px;
+    margin: 0;
+    border-radius: 20px;
+}
+
+#product main .product-nav .product-nav-box ul li {
+    border-bottom: 2px dashed #999999;
+    height: 27px;
+    line-height: 27px;
+}
+
+#product main .product-nav .product-nav-box ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+#product main .product-nav .product-nav-box ul li:nth-child(5n+1) a:hover {
+    background-color: #fa0303;
+}
+
+#product main .product-nav .product-nav-box ul li:nth-child(5n+2) a:hover {
+    background-color: #03ff07;
+}
+
+#product main .product-nav .product-nav-box ul li:nth-child(5n+3) a:hover {
+    background-color: #ff8803;
+}
+
+#product main .product-nav .product-nav-box ul li:nth-child(5n+4) a:hover {
+    background-color: #fff203;
+}
+
+#product main .product-nav .product-nav-box ul li:nth-child(5n+5) a:hover {
+    background-color: #0314ff;
+}
+
+
+
+#product main .item-list {
+    width: 630px;
+    height: 1200px;
+    margin-left: 30px;
+    background-color: #589ebf;
+    border-radius: 40px;
+}
+
+#product main .item-list .item-list-inner {
+  display: flex;
+  flex-wrap: wrap;
+  height: 1100px;
+  align-content: flex-start;
+}
+
+#product main .item-list .item-list-inner .item {
+    width: 330px;
+    padding: 30px;
+    padding-bottom: 0;
+    height: 330px;
+}
+
+#product main .item-list .item-list-inner .item a {
+    text-decoration: none;
+    color: #000000;
+}
+
+#product main .item-list .item-list-inner .item:nth-child(even) {
+    padding-left: 0;
+    width: 300px;
+}
+
+#product main .item-list .item-list-inner .item img {
+    width: 270px;
+    height: 270px;
+}
+
+#product main .item-list .item-list-inner .item p {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    line-height: 26px;
+    height: 26px;
+}
+
+#product main .item-list .page-num {
+    width: 270px;
+    margin: 0 auto;
+}
+
+#product main .item-list .page-num p {
+    text-align: center;
+    margin: 0;
+}
+
+
+
+#product main .item-list .page-num p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#product main .item-list .page-num p a,
+#product main .item-list .page-num p span {
+    display: block;
+    width: 25px;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+#product main .item-list .page-num p a:hover {
+    background-color: #aeaeae;
+}
+
+
+
+/*product-single*/
+
+#product-single main .single-item {
+    height: 960px;
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+    background-color: #589ebf;
+    margin: 0 auto;
+}
+
+#product-single main .single-item .single-left {
+    width: 50%;
+    padding-right: 15px;
+}
+
+#product-single main .single-item .single-right {
+    width: 50%;
+    padding-left: 15px;
+}
+
+#product-single main .single-item .single-left .single-img {
+    margin-bottom: 20px;
+}
+
+#product-single main .single-item .single-left img {
+    height: 420px;
+    width: 400px;
+}
+
+#product-single main .single-item .single-left p,
+#product-single main .single-item .single-right p {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+    height: 53px;
+    line-height: 53px;
+    font-size: 25px;
+    padding-left: 30px;
+}
+
+#product-single main .single-item .single-left p:last-child {
+    text-align: right;
+    padding-right: 30px;
+    font-weight: bold;
+}
+
+#product-single main .single-item .single-right .form {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    height: 126px;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+#product-single main .single-item .single-right .form input[type="submit"] {
+        font-weight: bold;
+        background-color: #fff203;
+}
+
+
+#product-single main .single-item .review {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    width: 840px;
+}
+
+#product-single main .single-item .review p {
+    font-size: 25px;
+    line-height: 30px;
+    text-indent: 1em;
+}
+
+#product-single main p.return {
+    width: 120px;
+    margin: 0 auto;
+    height: 50px;
+    margin-top: 30px;
+}
+
+#product-single main p.return a {
+    display: block;
+    background-color: #000000;
+    color: #ffffff;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#product-single main p.return a:hover {
+    background-color: #666666;
+}
+
+/* buy_result */
+
+#buy_result .row main {
+  height: 700px;
+  width: 100%;
+  background-color: #c3ffd7;
+}
+
+#buy_result .row main div {
+  padding: 300px 0;
+}
+
+#buy_result .row main div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  color: #999900;
+}
+
+#buy_result .row main div p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#buy_result .row main div p a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 30px;
+}
+
+#buy_result .row main div p a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/*payment*/
+#payment #main-outer {
+    padding: 40px 30px 30px 30px;
+}
+
+#payment #main-outer table {
+    background-color: #c3ffd7;
+    border: 1px solid #000000;
+    margin-bottom: 100px;
+}
+
+#payment #main-outer table caption {
+    height: 70px;
+    text-align: center;
+    background-color: #589ebf;
+    border-radius: 40px;
+    line-height: 70px;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+#payment #main-outer table th {
+    width: 200px;
+    border: 1px solid #000000;
+}
+
+#payment #main-outer table td {
+    border: 1px solid #000000;
+    padding: 10px;
+}
+
+#payment #main-outer table.single-table {
+    margin-bottom: 35px;
+}
+
+#payment #main-outer table.single-table td {
+    height: 175px;
+    padding: 25px;
+}
+
+#payment #main-outer table.single-table td h4 {
+    text-align: center;
+}
+
+#payment #main-outer table.last-table td {
+    width: 50%;
+    text-align: center;
+}
+
+/*access*/
+#access #main-outer {
+    padding: 40px 30px 30px 30px;
+}
+
+#access #main-outer main .shop-comment {
+    width: 100%;
+    padding: 20px;
+    background-color: #c3ffd7;
+}
+
+#access #main-outer main .shop-comment h3 {
+    text-align: center;
+    font-size: 24px;
+}
+
+#access #main-outer main .shop-comment p {
+    text-indent: 1em;
+    font-size: 24px;
+}
+
+#access #main-outer main table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 50px 0;
+}
+
+#access #main-outer main th {
+    width: 250px;
+    font-size: 25px;
+    height: 70px;
+}
+
+#access #main-outer main td {
+    font-size: 22px;
+}
+
+#access #main-outer main tr:nth-child(odd) {
+    background-color: #c3ffd7;
+}
+
+/*solution*/
+
+#solution #main-outer {
+    padding-top: 30px;
+}
+
+#solution h2 {
+    background-color: #fff203;
+    text-align: center;
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 60px;
+    margin: 20px auto;
+    font-size: 25px;
+}
+
+#solution section {
+    background-color: #589ebf;
+    margin-bottom: 40px;
+    padding: 40px;
+    padding-top: 10px;
+}
+
+#solution section h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#solution section .explanatory-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+#solution section img {
+    width: 200px;
+    height: 200px;
+}
+
+#solution section iframe {
+    height: 200px;
+    width: 300px;
+}
+
+#solution section .rotation-symbol {
+    height: 200px;
+    width: 250px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    line-height: 60px;
+}
+
+#solution #main-outer main .page-num {
+    margin: 0 auto;
+    width: 270px;
+    margin-bottom: 140px;
+}
+
+#solution #main-outer main .page-num p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#solution #main-outer main .page-num p a {
+    display: block;
+    width: 25px;
+    font-size: 22px;
+}
+
+#solution #main-outer main .page-num p a:hover {
+    background-color: #aeaeae;
+}
+
+/*contact*/
+
+#contact #main-outer {
+    width: 100%;
+    padding: 40px;
+}
+
+#contact #main-outer main {
+    background-color: #c3ffd7;
+    padding: 50px;
+}
+
+#contact #main-outer main p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#contact #main-outer main span {
+    color: #ff0000;
+}
+
+#contact #main-outer main form {
+    width: 700px;
+    margin: 0 auto;
+}
+
+#contact #main-outer main form dt {
+    font-size: 23px;
+    margin-top: 45px;
+    margin-bottom: 15px;
+}
+
+#contact #main-outer main form dd {
+    font-size: 23px;
+    margin-left: 60px;
+}
+
+#contact #main-outer main form dd.name-box {
+    margin-left: 37px;
+}
+
+#contact #main-outer main form dd input {
+    padding: 5px;
+}
+
+#contact #main-outer main form dd input#post-num-1 {
+    width: 100px;
+}
+
+#contact #main-outer main form dd input#post-num-2 {
+    width: 150px;
+}
+
+#contact #main-outer main form dd input#city {
+    width: 350px;
+}
+
+#contact #main-outer main form dd input#address,
+#contact #main-outer main form dd input#email{
+    width: 600px;
+}
+
+#contact #main-outer main form dd input#product {
+    width: 450px;
+}
+
+#contact #main-outer main form dd textarea {
+    width: 450px;
+    height: 300px;
+    padding: 20px;
+    overflow: scroll;
+}
+
+#contact #main-outer main form p {
+    width: 250px;
+    margin: 40px auto;
+}
+
+#contact #main-outer main form p input[type="submit"] {
+    display: block;
+    background-color: #000000;
+    width: 250px;
+    height: 70px;
+    color: #ffffff;
+}
+
+#contact #main-outer main form p input[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* contact_result */
+
+#contact_result .row #main-outer main {
+  height: 700px;
+  width: 100%;
+  background-color: #c3ffd7;
+}
+
+#contact_result .row #main-outer main div {
+  padding: 300px 0;
+}
+
+#contact_result .row #main-outer main div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  color: #999900;
+}
+
+#contact_result .row #main-outer main div p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#contact_result .row #main-outer main div p a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 30px;
+}
+
+#contact_result .row #main-outer main div p a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/*privacy*/
+#privacy main {
+    background-color: #c3ffd7;
+    margin: 40px;
+    padding: 40px;
+}
+
+#privacy main h2 {
+    font-size: 20px;
+    margin: 30px 20px 0 0;
+}
+
+#privacy main p {
+    line-height: 20px;
+    font-size: 17px;
+    text-indent: 1em;
+    letter-spacing: 2px;
+}
+
+/* login */
+#login {
+  width: 100%;
+}
+
+#login .row #main-outer main .login-outer {
+  background-color: #ffffaa;
+  padding: 50px;
+}
+
+#login .row #main-outer main .login-outer .login form p {
+  width: 65%;
+  margin: 35px auto;
+  text-align: center;
+  font-size: 28px;
+}
+
+#login .row #main-outer main .login-outer .login p input {
+  width: 100%;
+  height: 45px;
+  padding: 5px;
+}
+
+#login .row #main-outer main .login-outer .login p input[type="radio"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+#login .row #main-outer main .login-outer .login form label:nth-child(3) p {
+  font-size: 18px;
+  margin: 0;
+}
+
+#login .row #main-outer main .login-outer .login p input[type="submit"] {
+  width: 40%;
+}
+
+#login .row #main-outer main .login-outer .login p a {
+  font-size: 18px;
+}
+
+#login .row #main-outer main .login-outer .login p {
+  width: 65%;
+  margin: 35px auto;
+  text-align: left;
+}
+
+/* user_add_result */
+
+#login_result .row main {
+  height: 700px;
+  width: 100%;
+  background-color: #c3ffd7;
+}
+
+#login_result .row main div {
+  padding: 300px 0;
+}
+
+#login_result .row main div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  color: #999900;
+}
+
+#login_result .row main div p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#login_result .row main div p a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 100px;
+  border-radius: 30px;
+}
+
+#login_result .row main div p a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* user_add_result */
+
+#user_add_result .row main {
+  height: 700px;
+  width: 100%;
+  background-color: #c3ffd7;
+}
+
+#user_add_result .row main div {
+  padding: 300px 0;
+}
+
+#user_add_result .row main div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  color: #999900;
+}
+
+#user_add_result .row main div p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#user_add_result .row main div p a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 30px;
+}
+
+#user_add_result .row main div p a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* logout */
+#logout .row #main-outer main {
+  height: 700px;
+  width: 100%;
+  background-color: #c3ffd7;
+}
+
+#logout .row #main-outer main div {
+  padding: 300px 0;
+}
+
+#logout .row #main-outer main div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  color: #999900;
+}
+
+#logout .row #main-outer main div p:nth-child(2) {
+  margin-top: 20px;
+}
+
+#logout .row #main-outer main div p a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 30px;
+}
+
+#logout .row #main-outer main div p a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+/*ココからレスポンシブ*/
+@media screen and (max-width:420px) {
+    .row {
+        width: 100%;
+    }
+
+    /* min-widthを960px(mainより細く鳴らないように）にしていたので解除 */
+    header,footer {
+      min-width: inherit;
+    }
+
+/*  header*/
+
+    header {
+        height: 60px;
+    }
+
+    header .row {
+        height: 60px;
+    }
+
+    header .row h1 {
+        margin: 0 auto;
+        line-height: 60px;
+        width: 100px;
+        height: 60px;
+    }
+
+    header .row h1 img {
+        width: 100px;
+    }
+
+    /* ログインボタン削除 */
+    header .row .logout_user_name {
+      display: none;
+    }
+
+    header .row #nav_button {
+        display: block;
+        position: fixed;
+        top: 33px;
+        right: 25px;
+        z-index: 999999;
+        width: 40px;
+        height: 3px;
+        background-color: #000000;
+        border: none;
+    }
+
+/*   nav */
+
+    #nav_button::before {
+        content: "";
+        display: block;
+        position: relative;
+        top: -10px;
+        width: 40px;
+        height: 3px;
+        background-color: #000000;
+    }
+
+    #nav_button::after {
+        content: "";
+        display: block;
+        position: relative;
+        bottom: -7px;
+        width: 40px;
+        height: 3px;
+        background-color: #000000;
+    }
+
+    #global {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        width: 100vw;
+        height: 100vh;
+        padding-top: 120px;
+        background-color: rgba(0,0,0,0.9);
+        transition: 0.3s;
+    }
+    #global.active {
+        display: block;
+    }
+
+    #global ul {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    #global ul li {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    #global .logout_responsive {
+      display: block;
+      width: 100%;
+      height: 60px;
+      background-color: #ffffff;
+      margin-top: 50px;
+    }
+
+    #global .logout_responsive .logout,
+    #global .logout_responsive .logout a,
+    #global .logout_responsive .user_name {
+      height: 30px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #global .logout_responsive .login {
+      height: 60px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #global .logout_responsive .logout a {
+      line-height: 30px;
+      text-decoration: none;
+    }
+    #global .logout_responsive .login a {
+      line-height: 60px;
+      text-decoration: none;
+    }
+
+
+    /*slider*/
+    #slider img {
+        width: 100%;
+        height: 200px;
+    }
+
+/*   footer*/
+    footer {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    footer .row {
+        display: block;
+    }
+
+    footer .row ul {
+        display: block;
+        width: 100%;
+        height: 60px;
+    }
+
+    footer .row ul li {
+        width: 100%;
+        text-align: center;
+        background-color: #0000cc;
+        height: 30px;
+    }
+
+    footer .row ul li a {
+        color: #ffffff;
+        width: 100%;
+    }
+
+    footer .row p {
+        width: 100%;
+        height: 30px;
+        background-color: #ffffff;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    #related-products {
+        width: 100%;
+    }
+
+    /*topimg*/
+    .top-img {
+        position: relative;
+        width: 100%;
+    }
+
+    .top-img img {
+        width: 100%;
+    }
+
+    .top-img p {
+        position: absolute;
+        width: 100%;
+        top: 80px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+
+
+/*home*/
+    #home #main-outer {
+        display: block;
+        margin: 0;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    #home #main-outer main {
+        width: 100%;
+    }
+
+    #home #main-outer .blog-outer {
+        width: 100%;
+    }
+
+    #home #main-outer .cube-flex h2 {
+        margin: 20px auto;
+        width: 100%;
+    }
+
+    #home #main-outer .cube-flex  img {
+        display: none;
+    }
+
+    #home #main-outer .blog-outer article {
+        width: 100%;
+    }
+
+    #home #main-outer .blog-outer article .blog-section {
+        width: 100%;
+        display: block;
+        margin: 0 0 40px 0;
+    }
+
+    #home #main-outer .blog-outer article .blog-section .scaleup {
+        width: 90%;
+        height: 140px;
+        margin: 0 auto 10px auto;
+
+    }
+
+    #home #main-outer .blog-outer article .blog-section .scaleup img {
+        width: 100%;
+        height: 140px;
+    }
+
+    #home #main-outer .blog-outer article .blog-section .blog-text {
+        height: 120px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #home #main-outer .blog-outer article .blog-section .blog-text p {
+        font-size: 16px;
+    }
+
+    #home #main-outer .blog-outer article .blog-section .blog-text p a {
+        font-size: 16px;
+    }
+
+
+    #home #main-outer .news-outer {
+        width: 100%;
+        height: 440px;
+    }
+
+    #home #main-outer .news-outer .news-text {
+        width: 100%;
+        padding: 10px;
+        height: 310px;
+    }
+
+    #home #main-outer .news-outer .news-text h3 strong {
+        font-size: 20px;
+    }
+
+    #home #main-outer .news-outer .news-text p {
+        font-size: 16px;
+    }
+
+    #home #main-outer aside {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    #home #main-outer aside .shop-introduction .zoomout {
+        width: 100%;
+    }
+
+/*    product*/
+
+    #product main {
+        position: relative;
+    }
+
+    #product main #product-nav-button {
+        display: block;
+        position: fixed;
+        top: 20px;
+        z-index: 999998;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    #product main #product-nav-button img {
+        width: 100%;
+        height: auto;
+        border: 1px solid #999999;
+    }
+
+    #product .product-nav {
+        display: none;
+        width: 100%;
+    }
+
+    #product .product-nav {
+        background-color: #000000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99998;
+        opacity: 0.9;
+    }
+
+    #product .product-nav.active {
+        display: block;
+        transition: 0.5s;
+    }
+
+    #product main .product-nav .product-nav-box {
+        background-color: #000000;
+        margin-bottom: 70px;
+    }
+
+    #product ul {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #product ul li {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    #product main .item-list {
+        width: 100%;
+        margin: 0;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    #product .row main .item-list .item-list-inner {
+      height: auto;
+    }
+
+    #product .row main .item-list .item-list-inner .item {
+      padding: 30px;
+      width: 330px;
+      margin: 0 auto;
+    }
+
+    #product aside {
+        display: none;
+    }
+
+    #product main .item-list .item:nth-child(even) {
+        padding-left: 30px;
+        width: 330px;
+    }
+
+    #product footer ul li {
+        margin: 0;
+    }
+
+/*  product-single*/
+
+    #product-single main .single-item {
+        height: 550px;
+        width: 100%;
+        padding: 30px;
+    }
+
+    #product-single main .single-item .single-left {
+        width: 50%;
+        padding-right: 5px;
+        height: 220px;
+    }
+
+    #product-single main .single-item .single-right {
+        width: 50%;
+        padding-left: 5px;
+        height: 220px;
+    }
+
+    #product-single main .single-item .single-left .single-img {
+        margin-bottom: 20px;
+    }
+
+    #product-single main .single-item .single-left img {
+        width: 100%;
+        height: auto;
+    }
+
+    #product-single main .single-item .single-left p,
+    #product-single main .single-item .single-right p {
+        margin: 0;
+        height: 20px;
+        line-height: 20px;
+        font-size: 10px;
+        padding-left: 5px;
+    }
+
+    #product-single main .single-item .single-left .meter,
+    #product-single main .single-item .single-right .meter{
+        position: relative;
+        height: 20px;
+        margin-bottom: 9px;
+    }
+
+    #product-single main .single-item .single-left p:last-child {
+        text-align: right;
+        padding-right: 30px;
+        font-weight: bold;
+    }
+
+    #product-single main .single-item .single-right .form {
+        width: 100%;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        height: 50px;
+        margin-top: 5px;
+        font-size: 3px;
+        padding: 5px;
+    }
+
+    #product-single main .single-item .single-right .form form input[type="number"] {
+        width: 50px;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    #product-single main .single-item .single-right .form form input[type="submit"] {
+        width: 60px;
+        height: 20px;
+        font-size: 3px;
+        font-weight: bold;
+        background-color: #fff203;
+    }
+
+    #product-single main .single-item .review {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        height: 250px
+    }
+
+    #product-single main .single-item .review p {
+        font-size: 15px;
+        line-height: 20px;
+        text-indent: 1em;
+    }
+
+    #product-single main p.return {
+        width: 120px;
+        margin: 0 auto;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    #product-single main p.return a {
+        display: block;
+        background-color: #000000;
+        color: #ffffff;
+        height: 30px;
+        width: 100%;
+        line-height: 30px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #product-single main p.return a:hover {
+        background-color: #666666;
+    }
+
+    #product-single aside {
+        display: none;
+    }
+
+    /*payment*/
+    #payment #main-outer {
+        padding: 40px 30px 30px 30px;
+    }
+
+    #payment #main-outer table {
+        margin-bottom: 100px;
+    }
+
+    #payment #main-outer table caption {
+        height: 40px;
+        line-height: 40px;
+        font-size: 20px;
+    }
+
+    #payment #main-outer table th {
+        width: 20px;
+        font-size: 13px;
+    }
+
+    /*access*/
+    #access #main-outer {
+        padding: 40px 30px 30px 30px;
+    }
+
+    #access #main-outer main .shop-comment {
+        padding: 10px;
+    }
+
+    #access #main-outer main .shop-comment h3 {
+        font-size: 18px;
+    }
+
+    #access #main-outer main .shop-comment p {
+        font-size: 16px;
+    }
+
+    #access #main-outer main table {
+        margin: 30px 0;
+    }
+
+    #access #main-outer main th {
+        width: 80px;
+        font-size: 16px;
+        height: 30px;
+    }
+
+    #access #main-outer main td {
+        font-size: 12px;
+    }
+
+    #access-map {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    #access-map iframe,
+    #access-map object,
+    #access-map embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*solution*/
+
+    #solution #main-outer {
+        padding-top: 30px;
+    }
+
+    #solution h2 {
+        width: 90%;
+        font-size: 20px;
+    }
+
+    #solution section {
+        margin-bottom: 20px;
+        padding: 20px;
+        padding-top: 10px;
+    }
+
+    #solution section h3 {
+        font-size: 22px;
+    }
+
+    #solution section .explanatory-text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #solution section img {
+        width: 100px;
+        height: 100px;
+        margin-right: 5px;
+    }
+
+    #solution section iframe {
+        height: 100px;
+        width: 150px;
+        margin-right: 5px;
+    }
+
+    #solution section .rotation-symbol {
+        height: 100px;
+        width: 125px;
+        font-size: 14px;
+        padding: 5px;
+        line-height: 20px;
+    }
+
+    /*contact*/
+    #contact #main-outer {
+        padding: 20px;
+    }
+
+    #contact #main-outer main {
+        padding: 20px;
+    }
+
+    #contact #main-outer main p {
+        font-size: 15px;
+    }
+
+    #contact #main-outer main form {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    #contact #main-outer main form dt {
+        font-size: 15px;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    #contact #main-outer main form dd {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+
+    #contact #main-outer main form dd.name-box {
+        margin-left: 37px;
+        width: 100px;
+    }
+
+    #contact #main-outer main form dd input {
+        padding: 3px;
+    }
+
+    #contact #main-outer main form dd input#post-num-1 {
+        width: 50px;
+    }
+
+    #contact #main-outer main form dd input#post-num-2 {
+        width: 100px;
+    }
+
+    #contact #main-outer main form dd input#city {
+        width: 200px;
+    }
+
+    #contact #main-outer main form dd input#address,
+    #contact #main-outer main form dd input#email{
+        width: 250px;
+    }
+
+    #contact #main-outer main form dd input#product {
+        width: 250px;
+    }
+
+    #contact #main-outer main form dd textarea {
+        width: 250px;
+        height: 200px;
+    }
+
+    #contact #main-outer main form p {
+        width: 250px;
+        margin: 40px auto;
+    }
+
+    #contact #main-outer main form p input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+        height: 45px;
+    }
+
+    /*privacy*/
+    #privacy main {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    #privacy main h2 {
+        font-size: 14px;
+        margin: 20px 15px 0 0;
+    }
+
+    #privacy main p {
+        line-height: 14px;
+        font-size: 11px;
+        text-indent: 1em;
+        letter-spacing: 2px;
+    }
+
+    /* contact_result */
+
+    #contact_result {
+      height: 100vh;
+    }
+
+    #contact_result .row:nth-child(2) {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+    }
+
+    #contact_result .row #main-outer {
+      height: 100%;
+      margin-top: 180px;
+      margin-bottom: 130px;
+    }
+
+    #contact_result .row .top-img {
+      position: fixed;
+      top: 60px;
+    }
+
+    #contact_result .row #main-outer main {
+      height: 100%;
+    }
+
+    #contact_result .row #main-outer main div {
+      padding-top: 50px;
+      padding-bottom: 0;
+    }
+
+    #contact_result .row #main-outer main div p {
+      width: 80%;
+      margin: 0 auto;
+      font-size: 28px;
+    }
+
+
+    #contact_result .row #main-outer main div p a {
+      width: 80%;
+      font-size: 25px;
+    }
+
+    #contact_result header {
+      position: fixed;
+      top: 0;
+    }
+
+    #contact_result footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    /* login */
+
+    #login header {
+      position: fixed;
+      top: 0;
+    }
+
+    #login footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    #login .row #main-outer main {
+      padding-top: 60px;
+      padding-bottom: 130px;
+      height: 100vh;
+    }
+
+    #login .row #main-outer main .login-outer {
+      padding: 50px 0;
+      height: 100%;
+    }
+
+    #login .row #main-outer main .login-outer .login form label p {
+      font-size: 20px;
+    }
+
+    #login .row #main-outer main .login-outer .login form label.radio p {
+      margin: 0 auto;
+    }
+
+    #login .row #main-outer main .login-outer .login form label input {
+      font-size: 18px;
+      height: 25px;
+    }
+
+    #login .row #main-outer main .login-outer .login form p input[type="submit"] {
+      height: 35px;
+      width: 60px;
+      font-size: 12px;
+    }
+
+    #login .row #main-outer main .login-outer .login p {
+      text-align: center;
+    }
+    /* login_result */
+
+    #login_result header {
+      position: fixed;
+      top: 0;
+    }
+
+    #login_result footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    #login_result .row:nth-child(2) {
+      padding-top: 60px;
+      padding-bottom: 130px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+    }
+
+    #login_result .row main div {
+      padding-top: 120px;
+    }
+
+    #login_result .row main div p {
+      font-size: 25px;
+    }
+
+    /* logout */
+
+    #logout header {
+      position: fixed;
+      top: 0;
+    }
+
+    #logout footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    #logout .row:nth-child(2) {
+      padding-top: 60px;
+      padding-bottom: 130px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+    }
+
+    #logout .row #main-outer main div {
+      padding-top: 120px;
+    }
+
+    #logout .row #main-outer main div p {
+      font-size: 25px;
+    }
+
+    #logout .row #main-outer main div p a {
+      width: 80%;
+    }
+
+    /* buy_result */
+    #buy_result {
+      height: 100vh;
+    }
+
+    #buy_result header {
+      position: fixed;
+      top: 0;
+      z-index: 99999;
+    }
+
+    #buy_result footer {
+      position: fixed;
+      bottom: 0;
+      z-index: 9999;
+    }
+
+    #buy_result .row main div p {
+      width: 80%;
+      font-size: 25px;
+      margin: 0 auto;
+    }
+
+    #buy_result .row main div p a {
+      width: 80%;
+    }
+
+}
+
+/* ここからアニメーション */
+/* ここからシェーダーアニメーション */
+@keyframes shade-double {
+    50% {
+        transform-origin: center left;
+        transform: scaleX(1.0);
+    }
+    50.001% {
+        transform-origin: center right;
+    }
+    100% {
+        transform-origin: center right;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes shade-single {
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+.shader {
+  position: relative;
+  height: 270px;
+}
+
+.shader:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #f0f0f0;
+    /* 表示を最前面から二つ目に */
+    z-index: 998;
+    /* 要素の変形をするプロパティを使用したときの起点を指定するプロパティ中央右を指定 */
+    transform-origin: center right;
+    /* 最初は画像が隠され表示されていないスクロールXは横幅の縮尺変更（通常サイズ(1.0まで動作する））アフター側の要素が動作した後でスクロールして消える */
+    transform: scaleX(1.0);
+}
+
+.shader.animate:before {
+    animation-name: shade-single;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+}
+
+.shader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3c5686;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transform-origin: center left;
+    /* 最初は要素（青色のスライド）は表示されていないので0 */
+    transform: scaleX(0);
+}
+
+.shader.animate:after {
+    animation-name: shade-double;
+    /* アニメーション開始から終了までの時間（秒数指定この場合0.5秒） */
+    animation-duration: 500ms;
+    /* アニメーションの緩急指定　ease-in-outは最初と最後で穏やかに進行する */
+    animation-timing-function: ease-in-out;
+    /* アニメーションが開始するまでの待ち時間を指定　今回は待ち時間無し */
+    animation-delay: 0s;
+    /* アニメーション開始前や終了後にどのようなスタイルを適用するかを指定foewardsはアニメーションが終了した後で、最後のフレーム（100％）で定義されたスタイルを適用する */
+    animation-fill-mode: forwards;
+}
+
+.item:nth-child(1) a .shader.animate:after {
+  background: #fa0303;
+}
+
+.item:nth-child(2) a .shader.animate:after {
+  background: #0314ff;
+}
+
+.item:nth-child(3) a .shader.animate:after {
+  background: #f5f2b2;
+}
+
+.item:nth-child(4) a .shader.animate:after {
+  background: #ff8803;
+}
+
+.item:nth-child(5) a .shader.animate:after {
+  background: #fff203;
+}
+
+.item:nth-child(6) a .shader.animate:after {
+  background: #03ff07;
+}
+
+/* meter */
+
+@keyframes meter-double {
+    0% {
+      transform-origin: center left;
+    }
+    20% {
+      transform: scaleX(0.9);
+    }
+    40% {
+        transform: scaleX(0.4);
+    }
+    60% {
+      transform: scaleX(0.8);
+    }
+    80% {
+      transform: scaleX(0.2);
+    }
+    80% {
+      transform: scaleX(1.0);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes meter-single {
+  50% {
+      transform: scaleX(1.0);
+  }
+    100% {
+        transform: scaleX(0);
+    }
+}
+.meter {
+  position: relative;
+  height: 53px;
+  margin-bottom: 20px;
+}
+
+.meter:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #f0f0f0;
+    /* 表示を最前面から二つ目に */
+    z-index: 998;
+    /* 要素の変形をするプロパティを使用したときの起点を指定するプロパティ中央右を指定 */
+    transform-origin: center right;
+    /* 最初は画像が隠され表示されていないスクロールXは横幅の縮尺変更（通常サイズ(1.0まで動作する））アフター側の要素が動作した後でスクロールして消える */
+    transform: scaleX(1.0);
+}
+
+.meter.animate:before {
+    animation-name: meter-single;
+    /* animation-duration: 400ms; */
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.meter:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #3c5686;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transform-origin: center left;
+    /* 最初は要素（青色のスライド）は表示されていないので0 */
+    transform: scaleX(0);
+}
+
+.meter.animate:after {
+    animation-name: meter-double;
+    /* アニメーション開始から終了までの時間（秒数指定この場合0.5秒） */
+    /* animation-duration: 500ms; */
+    animation-duration: 2s;
+    /* アニメーションの緩急指定　ease-in-outは最初と最後で穏やかに進行する */
+    animation-timing-function: ease-in-out;
+    /* アニメーションが開始するまでの待ち時間を指定　今回は待ち時間無し */
+    animation-delay: 0s;
+    /* アニメーション開始前や終了後にどのようなスタイルを適用するかを指定foewardsはアニメーションが終了した後で、最後のフレーム（100％）で定義されたスタイルを適用する */
+    animation-fill-mode: forwards;
+    border-top-right-radius : 12px;
+    border-bottom-right-radius : 12px;
+}
+
+.meter.animate:nth-child(1n+1):after {
+  background: #fa0303;
+}
+
+.meter.animate:nth-child(2n+1):after {
+  background: #0314ff;
+}
+
+.meter.animate:nth-child(3n+1):after {
+  background: #03ff07;
+}
+
+.meter.animate:nth-child(4n+1):after {
+  background: #ff8803;
+}
+
+.meter.animate:nth-child(5n+1):after {
+  background: #fff203;
+}
+
+.meter.animate:nth-child(6n+1):after {
+  /* background: #f5f2b2; */
+  background: #03ff07;
+}
+
+.meter.animate.delay-100:after { animation-delay: 100ms; }
+.meter.animate.delay-200:after { animation-delay: 200ms; }
+.meter.animate.delay-300:after { animation-delay: 300ms; }
+.meter.animate.delay-400:after { animation-delay: 400ms; }
+.meter.animate.delay-500:after { animation-delay: 500ms; }
+.meter.animate.delay-600:after { animation-delay: 600ms; }
+.meter.animate.delay-700:after { animation-delay: 700ms; }
+.meter.animate.delay-800:after { animation-delay: 800ms; }
+
+.meter.animate.delay-100:before { animation-delay: 2100ms; }
+.meter.animate.delay-200:before { animation-delay: 2200ms; }
+.meter.animate.delay-300:before { animation-delay: 2300ms; }
+.meter.animate.delay-400:before { animation-delay: 2400ms; }
+.meter.animate.delay-500:before { animation-delay: 2500ms; }
+.meter.animate.delay-600:before { animation-delay: 2600ms; }
+.meter.animate.delay-700:before { animation-delay: 2700ms; }
+.meter.animate.delay-800:before { animation-delay: 2800ms; }
+
+
+/* slide */
+.slidein {
+  position: absolute;
+  top: 4000px;
+  left: 100px;
+  width: 420px;
+  height: 560px;
+  background: url(taikai.png) center center /cover no-repeat;
+}
+
+/* ここからスライドインアニメーション */
+
+.slidein {
+    opacity: 0;
+}
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slidein.animate {
+    animation-name: slidein;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+.slidein.animate.delay-100 { animation-delay: 100ms; }
+.slidein.animate.delay-200 { animation-delay: 200ms; }
+.slidein.animate.delay-300 { animation-delay: 300ms; }
+.slidein.animate.delay-400 { animation-delay: 400ms; }
+.slidein.animate.delay-500 { animation-delay: 500ms; }
+.slidein.animate.delay-600 { animation-delay: 600ms; }
+.slidein.animate.delay-700 { animation-delay: 700ms; }
+.slidein.animate.delay-800 { animation-delay: 800ms; }
+.slidein.animate.delay-900 { animation-delay: 900ms; }
+.slidein.animate.delay-1000 { animation-delay: 1000ms; }
+.slidein.animate.delay-1100 { animation-delay: 1100ms; }
+.slidein.animate.delay-1200 { animation-delay: 1200ms; }
+.slidein.animate.delay-1300 { animation-delay: 1300ms; }
+.slidein.animate.delay-1400 { animation-delay: 1400ms; }
+.slidein.animate.delay-1500 { animation-delay: 1500ms; }
+.slidein.animate.delay-1600 { animation-delay: 1600ms; }
+.slidein.animate.delay-1700 { animation-delay: 1700ms; }
+.slidein.animate.delay-1800 { animation-delay: 1800ms; }
+.slidein.animate.delay-1900 { animation-delay: 1900ms; }
+.slidein.animate.delay-2000 { animation-delay: 2000ms; }
+
+/* zoomout */
+.zoomout {
+  width: 260px;
+  height: 160px;
+  margin-bottom: 20px;
+  background: url(../images/man/shopstaff.jpg) center center /cover no-repeat;
+}
+
+/* ここからアニメーション */
+.zoomout {
+  /* 最初は透明にしておく */
+    opacity: 0;
+}
+
+.zoomout.animate {
+  /* アニメーションの名前を指定　@keyframes zoomoutを動作させる宣言 */
+    animation-name: zoomout;
+    /* アニメーションが開始してから終了するまでの時間 */
+    animation-duration: 3s;
+    /* 最初は早く中盤から穏やかに進行する（初期値） */
+    animation-timing-function: ease;
+    /* クラス名が付与されてアニメーションが始まるまでの待機時間 　下記のクラス.delay-100等を付ける事でそれぞれの待機時間を変更可能にしている*/
+    animation-delay: 0s;
+    /* アニメーション終了時100％（最後のフレーム）で指定したスタイルを適用 */
+    animation-fill-mode: forwards;
+}
+
+.zoomout.animate.delay-100 { animation-delay: 100ms; }
+.zoomout.animate.delay-200 { animation-delay: 200ms; }
+.zoomout.animate.delay-300 { animation-delay: 300ms; }
+.zoomout.animate.delay-400 { animation-delay: 400ms; }
+.zoomout.animate.delay-500 { animation-delay: 500ms; }
+.zoomout.animate.delay-600 { animation-delay: 600ms; }
+.zoomout.animate.delay-700 { animation-delay: 700ms; }
+.zoomout.animate.delay-800 { animation-delay: 800ms; }
+.zoomout.animate.delay-900 { animation-delay: 900ms; }
+.zoomout.animate.delay-1000 { animation-delay: 1000ms; }
+.zoomout.animate.delay-1100 { animation-delay: 1100ms; }
+.zoomout.animate.delay-1200 { animation-delay: 1200ms; }
+.zoomout.animate.delay-1300 { animation-delay: 1300ms; }
+.zoomout.animate.delay-1400 { animation-delay: 1400ms; }
+.zoomout.animate.delay-1500 { animation-delay: 1500ms; }
+.zoomout.animate.delay-1600 { animation-delay: 1600ms; }
+.zoomout.animate.delay-1700 { animation-delay: 1700ms; }
+.zoomout.animate.delay-1800 { animation-delay: 1800ms; }
+.zoomout.animate.delay-1900 { animation-delay: 1900ms; }
+.zoomout.animate.delay-2000 { animation-delay: 2000ms; }
+
+@keyframes zoomout {
+    0% {
+      /* 透明な状態で要素の縦幅を1割増しにした状態から… */
+        opacity: 0;
+        background-size: 110% auto;
+    }
+    100% {
+      /* 透明でなくなり大元のオブジェクトサイズに戻す事でズームアウトしたように見える */
+        opacity: 1;
+        background-size: 100% auto;
+    }
+}
+
+/* scaleup */
+/* ここからアニメーション */
+.scaleup {
+  /* 透明な状態から開始 */
+    opacity: 0;
+}
+
+.scaleup.animate {
+  /* ここは他のアニメーションと同じ */
+    animation-name: scaleup;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+
+.scaleup.animate.delay-100 { animation-delay: 100ms; }
+.scaleup.animate.delay-200 { animation-delay: 200ms; }
+.scaleup.animate.delay-300 { animation-delay: 300ms; }
+.scaleup.animate.delay-400 { animation-delay: 400ms; }
+.scaleup.animate.delay-500 { animation-delay: 500ms; }
+.scaleup.animate.delay-600 { animation-delay: 600ms; }
+.scaleup.animate.delay-700 { animation-delay: 700ms; }
+.scaleup.animate.delay-800 { animation-delay: 800ms; }
+.scaleup.animate.delay-900 { animation-delay: 900ms; }
+.scaleup.animate.delay-1000 { animation-delay: 1000ms; }
+.scaleup.animate.delay-1100 { animation-delay: 1100ms; }
+.scaleup.animate.delay-1200 { animation-delay: 1200ms; }
+.scaleup.animate.delay-1300 { animation-delay: 1300ms; }
+.scaleup.animate.delay-1400 { animation-delay: 1400ms; }
+.scaleup.animate.delay-1500 { animation-delay: 1500ms; }
+.scaleup.animate.delay-1600 { animation-delay: 1600ms; }
+.scaleup.animate.delay-1700 { animation-delay: 1700ms; }
+.scaleup.animate.delay-1800 { animation-delay: 1800ms; }
+.scaleup.animate.delay-1900 { animation-delay: 1900ms; }
+.scaleup.animate.delay-2000 { animation-delay: 2000ms; }
+
+@keyframes scaleup {
+    0% {
+        opacity: 0;
+        /* 違うのはここ　オブジェクトサイズを縦横0から… */
+        transform: scale(0,0);
+    }
+    100% {
+        opacity: 1;
+        /* 通常サイズである1まで拡大する */
+        transform: scale(1.0,1.0);
+    }
+}

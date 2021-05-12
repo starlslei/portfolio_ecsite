@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>カルーセルパネル回転木馬</title>
+    <link rel="stylesheet" href="carousel.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //初期設定
+            // #carouselInnerの横幅を指定（幅は表示領域の幅930px　かける　パネルの数（ul.column)
+        $("#carouselInner").css("width",930*$("#carouselInner ul.column").length+"px");
+        // .prependTo関数で最後のパネルを#carouselInnerの先頭に移動するこうする事で常に最終パネルが先頭にループするようになる。しかしこのままでは最終パネルが表示領域に出るようになるので・・・
+        $("#carouselInner ul.column:last").prependTo("#carouselInner");
+        // #carouselInnerにネガティブマージンを付ける事で表示領域にたいするパネル（ul.column）の位置を調整して1番目から表示されるようにしている。
+        $("#carouselInner").css("margin-left","-800px");
+        // つまりオーバーフローhiddenのせいで表示は変わらないが最終のパネルが先頭に移動し2番目（元の先頭パネル）が表示されている状態になる。
+
+        //戻るボタン
+        // クリックされると左方向にスライド移動する処理を記述
+        $("#carouselPrev").click(function(){
+            $("#carouselNext,#carouselPrev").hide();
+            $("#carouselInner").animate({
+                "margin-left" : parseInt($("#carouselInner").css("margin-left"))+800+"px"
+            },"slow","swing" ,
+            function(){
+                $("#carouselInner").css("margin-left","-800px")
+                $("#carouselInner ul.column:last").prependTo("#carouselInner");
+                $("#carouselNext,#carouselPrev").show();
+            });
+        });
+
+        $("#carouselNext").click(function(){
+            // hideはオブジェクトを消す関数　クリックした後で移動中にもう一度押してしまうとスライド座標が狂ってしまうのでスライド中は一時的に押せなくする目的
+            $("#carouselNext,#carouselPrev").hide();
+            // animate()を使ってスライドさせる。アニメート関数はcssの適応を数値指定して変更する関数本のp137に記載あり。戻るボタンは左から右にスライドさせたいのでマージンレフトに表示領域である620pxを加算した値を設定するするとパネル全体がマージンに押されて右にスライドする。
+            // 上記の通りmargin-leftに指定した分動くがその値を整数で受け取るためにparseInt関数を使用animete関数には動作速度スロウ、動作のスタイルにスイングを指定（動作に抑揚がある徐々に加速する）
+            $("#carouselInner").animate({
+                "margin-left" : parseInt($("#carouselInner").css("margin-left"))-800+"px"
+            },"slow","swing" ,
+            // ここからはコールバック関数（アニメーション終了時に動作する関数）アニメーション後に末尾に来たパネルを先頭に戻しmargin-leftを元の値に戻す事で、ul.columnの先頭にul.columnが存在する状態を再び作る。そして非表示にしていたボタンを表示状態に戻せば処理完成
+
+            //進むボタン
+            // 戻るボタンとの違いは動作方向margin-leftが逆なので+620pxではなく-620pxになる
+            function(){
+                $("#carouselInner").css("margin-left","-800px")
+                $("#carouselInner ul.column:first").appendTo("#carouselInner");
+                $("#carouselNext,#carouselPrev").show();
+            });
+        });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="carouselWrap">
+        <p id="carouselPrev"><img src="carousel-back.png" alt="前へ" /></p>
+        <p id="carouselNext"><img src="carousel-next.png" alt="次へ" /></p>
+        <div id="carousel">
+            <div id="carouselInner">
+                <ul class="column">
+                    <li><a href="#"><img src="2x2x2.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="GIO.png" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="good.png" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="kousiki.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                </ul>
+                <ul class="column">
+                    <li><a href="#"><img src="megaminx.png" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="megaminx.png" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="megaminx.png" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="megaminx.png" alt="" /><p>テキストテキスト</p></a></li>
+                </ul>
+                <ul class="column">
+                    <li><a href="#"><img src="oil.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="oil.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="oil.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                    <li><a href="#"><img src="oil.jpg" alt="" /><p>テキストテキスト</p></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* 最背面のオブジェクト */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 最背面*/
+#carouselWrap {
+  margin: 100px auto;
+  width: 945px;
+  height: 300px;
+  /* paddingを５pxとする事で周囲に5px見える状態になる */
+  padding: 40px 65px;
+  /* background-color: red; */
+  /* background: url("QiYiValk3.jpg"); */
+  /* 戻るボタンと進むボタンをアブソリュートで配置したいのでrelativeを設定 */
+  position: relative;
+  background-image: url(carousel.png);
+  background-repeat: no-repeat;
+}
+/* これが戻るボタン */
+#carouselPrev {
+  position: absolute;
+  top: 115px;
+  left: 20px;
+  cursor: pointer;
+}
+
+#carouselPrev img {
+  width: 50px;
+  height: 50px;
+}
+
+/* これが進むボタン */
+#carouselNext {
+  position: absolute;
+  top: 115px;
+  right: 20px;
+  cursor: pointer;
+}
+
+#carouselNext img {
+  width: 50px;
+  height: 50px;
+}
+
+/* 最前面のオブジェクト */
+#carousel {
+  /* carouselから画像がはみ出さないようにマスクしている */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#carouselInner {
+  height: 100%;
+}
+
+#carouselInner ul.column {
+  width: 800px;
+  height: 220px;
+  padding: 15px 0 15px 15px;
+  list-style-type: none;
+  float: left;
+}
+
+#carouselInner ul.column li {
+  float: left;
+  /* インラインにしたのはIE6で表示がずれるバグがあるのでその対策 */
+  display: inline;
+  /* marginとあわせて25％（４分の一なので画像が４つ入る） */
+  width: 19%;
+  margin: 0 3%;
+  height: 170px;
+}
+
+#carouselInner ul.column li a {
+  display: block;
+  text-decoration: none;
+  height: 170px;
+}
+
+#carouselInner ul.column li img {
+  border: none;
+  width: 100%;
+  height: 150px;
+}
+
+#carouselInner ul.column li p {
+  height: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}

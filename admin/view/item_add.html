@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>商品追加</title>
+    <link rel="stylesheet" href="../view/css/style.css" />
+</head>
+<body id="item_add">
+    <div class="row">
+        <h1>商品追加</h1>
+        <form method="post" action="../controller/item_add_result_operation.php">
+            <p>
+                <label for="item-name">商品名を入力</label>
+                <input type="text" value="" name="item-name" required id="item-name"/>
+            </p>
+            <p>
+                <label for="type">商品のジャンルを選択</label>
+                <select name="type" id="type">
+                    <option value="1">3x3x3</option>
+                    <option value="2">4x4x4</option>
+                    <option value="3">5x5x5</option>
+                    <option value="4">ピラミンクス</option>
+                    <option value="5">メガミンクス</option>
+                    <option value="6">スキューブ</option>
+                    <option value="7">ボイドキューブ</option>
+                    <option value="8">GIOキューブ</option>
+                    <option value="9">ミラーブロックス</option>
+                    <option value="10">その他のキューブ</option>
+                    <option value="11">整備用工具</option>
+                    <option value="12">オイル</option>
+                    <option value="13">スタックタイマー</option>
+                    <option value="14">ステッカー</option>
+                    <option value="15">アクセサリーその他</option>
+                </select>
+            </p>
+            <p>
+                <label for="price">金額を入力してください</label>
+                <input type="number" value="" name="price" required id="price"/>
+            </p>
+            <p>
+                <label for="stock">在庫数を入力</label>
+                <input type="number" value="" name="stock" required id="stock"/>
+            </p>
+            <p>
+                <label for="difficulty">難易度を選択</label>
+                <select name="difficulty" id="difficulty">
+                    <option value="1">難易度1</option>
+                    <option value="2">難易度2</option>
+                    <option value="3">難易度3</option>
+                    <option value="4">難易度4</option>
+                    <option value="5">難易度5</option>
+                    <option value="6">その他</option>
+                </select>
+            </p>
+            <p>
+                <label for="mg">マグネットの有無を入力</label>
+                <select name="mg" id="mg">
+                    <option value="1">マグネットあり</option>
+                    <option value="2">マグネットなし</option>
+                    <option value="3">その他</option>
+                </select>
+            </p>
+            <p>
+                <label for="size">サイズを入力</label>
+                <input type="text" value="" name="size" required placeholder="半角入力mm表示" id="size"/>
+            </p>
+            <p>
+                <label for="wight">重さを入力</label>
+                <input type="text" name="wight" required placeholder="半角入力g表示" id="wight"/>
+            </p>
+            <p>
+                <label for="feel">回し心地を選択</label>
+                <select name="feel" id="feel">
+                    <option value="1">しっとり</option>
+                    <option value="2">しっとり寄り</option>
+                    <option value="3">中間</option>
+                    <option value="4">カラカラ寄り</option>
+                    <option value="5">カラカラ</option>
+                    <option value="6">その他</option>
+                </select>
+            </p>
+            <p>
+                <label for="stacker">ステッカーを選択</label>
+                <select name="stacker" id="stacker">
+                    <option value="1">ステッカーあり</option>
+                    <option value="2">ステッカーレス</option>
+                    <option value="3">その他</option>
+                </select>
+            </p>
+            <p>
+                <label for="img">画像名を入力</label>
+                <input type="text" value="" name="img" required placeholder="画像名を入力" id="img"/>
+            </p>
+            <p>
+                <label for="text">レビュー文を入力してください</label>
+                <textarea name="text" id="text" required></textarea>
+            </p>
+            <p>
+                <label for="related">関連商品の種類を選択</label>
+                <select name="related" id="related">
+                    <option value="1">3x3x3</option>
+                    <option value="2">4x4x4</option>
+                    <option value="3">5x5x5</option>
+                    <option value="4">ピラミンクス</option>
+                    <option value="5">メガミンクス</option>
+                    <option value="6">スキューブ</option>
+                    <option value="7">ボイドキューブ</option>
+                    <option value="8">GIOキューブ</option>
+                    <option value="9">ミラーブロックス</option>
+                    <option value="10">その他のキューブ</option>
+                    <option value="11">整備用工具</option>
+                    <option value="12">オイル</option>
+                    <option value="13">スタックタイマー</option>
+                    <option value="14">ステッカー</option>
+                    <option value="15">アクセサリーその他</option>
+                </select>
+            </p>
+            <p class="submit">
+                <input type="submit" value="送信" />
+            </p>
+        </form>
+    </div>
+</body>
+</html>
